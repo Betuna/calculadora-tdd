@@ -7,18 +7,19 @@ def exponencial(x, iteraciones=20):
         resultado += termino
     return resultado
 
-def raiz_cuadrada(n, precision=1e-10):
+def raiz_cuadrada(n, precision=1e-12, max_iter=100):
     if n < 0:
         raise ValueError("No existe raíz real de números negativos")
     if n == 0:
         return 0
    
     aproximacion = n
-    while True:
+    for _ in range(max_iter):
         nueva_aproximacion = 0.5 * (aproximacion + n / aproximacion)
         if abs(aproximacion - nueva_aproximacion) < precision:
             return nueva_aproximacion
         aproximacion = nueva_aproximacion
+    return aproximacion
 
 def division(a, b):
     if  b==0:
