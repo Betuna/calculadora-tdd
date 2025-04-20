@@ -1,4 +1,12 @@
 # calculadora/operaciones.py
+def exponencial(x, iteraciones=20):
+    resultado = 1.0
+    termino = 1.0
+    for n in range(1, iteraciones):
+        termino *= x / n
+        resultado += termino
+    return resultado
+
 def raiz_cuadrada(n, precision=1e-10):
     if n < 0:
         raise ValueError("No existe raíz real de números negativos")
