@@ -4,6 +4,16 @@ from calculadora.operaciones import suma
 from calculadora.operaciones import resta
 from calculadora.operaciones import multiplicacion
 from calculadora.operaciones import division
+from calculadora.operaciones import raiz_cuadrada
+
+def test_raiz_cuadrada():
+    assert raiz_cuadrada(9) == pytest.approx(3, 0.001)
+    assert raiz_cuadrada(2) == pytest.approx(1.412, 0.001)
+    assert raiz_cuadrada(0) == 0
+
+def test_raiz_negativa():
+    with pytest.raises(ValueError):
+        raiz_cuadrada(-4) 
 
 def test_division():
     assert division(10, 2) == 5.0
