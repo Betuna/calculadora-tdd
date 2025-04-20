@@ -3,6 +3,16 @@ import pytest
 from calculadora.operaciones import suma
 from calculadora.operaciones import resta
 from calculadora.operaciones import multiplicacion
+from calculadora.operaciones import division
+
+def test_division():
+    assert division(10, 2) == 5.0
+    assert division(7, 3) == pytest.approx(2.333333, 0.001)
+    assert division(5,2) == 2.5
+
+def test_division_por_cero():
+    with pytest.raises(ValueError):
+        division(5, 0)
 
 def test_multiplicacion():
     assert multiplicacion(3, 4) == 12
