@@ -1,4 +1,17 @@
 # calculadora/operaciones.py
+def raiz_cuadrada(n, precision=1e-10):
+    if n < 0:
+        raise ValueError("No existe raíz real de números negativos")
+    if n == 0:
+        return 0
+   
+    aproximacion = n
+    while True:
+        nueva_aproximacion = 0.5 * (aproximacion + n / aproximacion)
+        if abs(aproximacion - nueva_aproximacion) < precision:
+            return nueva_aproximacion
+        aproximacion = nueva_aproximacion
+
 def division(a, b):
     if  b==0:
         raise ValueError("No se puede dividir por cero")
