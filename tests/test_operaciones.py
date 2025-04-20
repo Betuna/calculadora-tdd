@@ -14,7 +14,7 @@ def test_exponencial():
 
 def test_raiz_cuadrada():
     assert raiz_cuadrada(9) == pytest.approx(3, 0.001)
-    assert raiz_cuadrada(2) == pytest.approx(1.412, 0.001)
+    assert raiz_cuadrada(2) == pytest.approx(1.414, 0.001)
     assert raiz_cuadrada(0) == 0
 
 def test_raiz_negativa():
