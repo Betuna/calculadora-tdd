@@ -5,6 +5,12 @@ from calculadora.operaciones import resta
 from calculadora.operaciones import multiplicacion
 from calculadora.operaciones import division
 from calculadora.operaciones import raiz_cuadrada
+from calculadora.operaciones import exponencial
+
+def test_exponencial():
+    assert exponencial(0) == pytest.approx(1, 0.001)
+    assert exponencial(1) == pytest.approx(2.71828, 0.001)
+    assert exponencial(2) == pytest.approx(7.389056, 0.001)
 
 def test_raiz_cuadrada():
     assert raiz_cuadrada(9) == pytest.approx(3, 0.001)
